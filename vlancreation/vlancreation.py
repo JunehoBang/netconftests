@@ -18,4 +18,5 @@ vlan = """
    </vlan-id>
 </vlans>
 """
+
 reply = eos.edit_config(target="running", config=vlan, default_operation="merge")
