@@ -1,3 +1,6 @@
+# Refered the follwoing git repository
+# https://github.com/aristanetworks/openmgmt/blob/main/src/ncclient/EOS_commands_with_NETCONF.py
+
 from ncclient import manager
 
 eos = manager.connect(
