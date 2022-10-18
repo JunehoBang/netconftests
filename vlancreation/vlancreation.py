@@ -3,23 +3,16 @@
 
 from ncclient import manager
 
-eos = manager.connect(
-    host="172.31.32.102",
-    port="830",
-    timeout=30,
-    username="admin",
-    password="password",
-    hostkey_verify=False,
-)
-vlan = """
+snippet = """
 <vlans xmlns="http://pica8.com/xorplus/vlans">
    <vlan-id>
       <id>136</id>
-      <description/>
-      <vlan-name>default</vlan-name>
+      <vlan-name>testvlan</vlan-name>
       <l3-interface>vlan136</l3-interface>
    </vlan-id>
 </vlans>
 """
 
-reply = eos.edit_config(target="running", config=vlan, default_operation="merge")
+with manager.connect(host="172.31.32.102", port="830",  timeout=30, username="admin", password="password",  hostkey_verify=False, device_params={'name':'default'}) as m:
+   reply = m.edit_config(target="running", config=snippet, default_operation="merge")
+   print(reply.xml)
