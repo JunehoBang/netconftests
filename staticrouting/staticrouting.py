@@ -6,12 +6,14 @@ add_snippet="""
 <config>
     <static xmlns="http://pica8.com/xorplus/static-routes">
         <route>
-            <name>10.1.0.1</name>
-            <>
+            <name>10.1.0.0/16</name>
+            <next-hop>10.10.0.21</next-hop>
         </route>
     </static>
 </config>
 """
+
+eos.edit_config(target="running", config=add_snippet, default_operation="merge")
 
 get_snippet="""
 <static xmlns="http://pica8.com/xorplus/static-routes">
