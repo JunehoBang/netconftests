@@ -34,7 +34,7 @@ delete_snippet = """
 <config>
    <vlans xmlns="http://pica8.com/xorplus/vlans">
       <vlan-id operation="delete">
-         <id>136</id>
+         <id>3</id>
       </vlan-id>
    </vlans>
 </config>
