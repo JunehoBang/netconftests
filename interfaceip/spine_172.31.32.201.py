@@ -29,25 +29,6 @@ set_snippet = """
 </config>
 """
 
-set_snippet = """
-<config>
-   <vlans xmlns="http://pica8.com/xorplus/vlans">
-      <vlan-id>
-         <id>101</id>
-         <l3-interface>vlan-101</l3-interface>
-      </vlan-id>
-      <vlan-id>
-         <id>104</id>
-         <l3-interface>vlan-104</l3-interface>
-      </vlan-id>
-      <vlan-id>
-         <id>105</id>
-         <l3-interface>vlan-105</l3-interface>
-      </vlan-id>
-   </vlans>
-</config>
-"""
-
 eos.edit_config(target="running", config=set_snippet, default_operation="merge")
 
 
