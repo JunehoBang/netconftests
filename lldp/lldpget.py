@@ -1,6 +1,6 @@
 from ncclient import manager
 
-eos = manager.connect(host="172.31.32.102", port="830",  timeout=500, username="admin", password="password",  hostkey_verify=False, device_params={'name':'default'})
+eos = manager.connect(host="172.31.32.101", port="830",  timeout=500, username="admin", password="password",  hostkey_verify=False, device_params={'name':'default'})
 
 
 get_snippet = """

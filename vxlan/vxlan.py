@@ -1,7 +1,14 @@
 from ncclient import manager
 
-eos = manager.connect(host="172.31.32.102", port="830",  timeout=500, username="admin", password="password",  hostkey_verify=False, device_params={'name':'default'})
-
+eos = manager.connect(host="172.31.32.102", 
+                      port="830",  
+                      timeout=500, 
+                      username="admin", 
+                      password="password",  
+                      hostkey_verify=False, 
+                      device_params={'name':'default'},
+                      allow_agent=False, 
+                      look_for_keys=False)
 add_snippet = """
 <config>
    <vxlans xmlns="http://pica8.com/xorplus/vxlans">
